@@ -253,6 +253,8 @@ public class CourseClientGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextRegNumberActionPerformed
 
+    
+    //Displays the course details of a given students
     private void jButtonViewStudentCWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewStudentCWActionPerformed
            
             
@@ -261,7 +263,7 @@ public class CourseClientGUI extends javax.swing.JFrame {
         }else{     
         
         try {
-            /* Create and display the form */
+            /* Creates the registry and does look of the binded remote object*/
             
             Registry reg = LocateRegistry.getRegistry("192.168.8.102",1099);
             CourseInterface c = (CourseInterface) reg.lookup("results");
@@ -311,13 +313,15 @@ public class CourseClientGUI extends javax.swing.JFrame {
            
     }//GEN-LAST:event_jButtonViewStudentCWActionPerformed
 
+    
+    //Displays courseworks per course per year per semester
     private void jButtonViewOverallCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewOverallCourseActionPerformed
         
         if(this.jTextCourseCode.getText().trim().isEmpty()||this.jTextYearL.getText().trim().isEmpty()||this.jTextSemesterL.getText().trim().isEmpty()){
             JOptionPane.showMessageDialog(this, "One or more field is empty !!!");   
         }else{ 
         try {
-            /* Create and display the form */
+            /* Creates the registry and does look of the binded remote object*/
             
             Registry reg = LocateRegistry.getRegistry("192.168.8.102",1099);
             CourseInterface c = (CourseInterface) reg.lookup("results");

@@ -8,7 +8,11 @@ package helper;
 /**
  *
  * @author Frank.Tilugulilwa
+ * @author Edward Mwangile
+ * @Daniel Mushi
  */
+
+//A class which sets global variables for our project.
 public class Settings {
     public static String splitBy = ",";
     public static String gCourseCode = null;

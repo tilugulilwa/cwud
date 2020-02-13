@@ -13,6 +13,9 @@ import java.sql.Statement;
 /**
  *
  * @author Frank.Tilugulilwa
+ * @author Edward Mwangile
+ * @author Daniel Mushi
+ * The class manages current year and semester.
  */
 public class Calender {
     
@@ -20,6 +23,7 @@ public class Calender {
     String usr = "root";
     String pwd = "frank";
     
+    //Function to verify the current year and semester or the active semester.
     public Boolean verify( int paramYear, int paramSemester){
         Boolean answer = true;
         try{

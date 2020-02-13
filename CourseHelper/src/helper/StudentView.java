@@ -10,7 +10,10 @@ import java.io.Serializable;
 /**
  *
  * @author Frank.Tilugulilwa
+ * @author Edward Mwangile
+ * @author Daniel Mushi
  */
+//Class students a blueprint for objects which are going to be transported over network to remote clients.The class must be serializable.
 public class StudentView implements Serializable {
     
     private String registrationNumber ; 

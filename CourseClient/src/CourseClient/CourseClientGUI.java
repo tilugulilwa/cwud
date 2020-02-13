@@ -254,6 +254,8 @@ public class CourseClientGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextRegNumberActionPerformed
 
+    
+    //Gives course work details of a single student.
     private void jButtonViewStudentCWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewStudentCWActionPerformed
         
         if(this.jTextRegNumber.getText().trim().isEmpty()||this.jTextYears.getText().trim().isEmpty()||this.jTextSemesters.getText().trim().isEmpty()){
@@ -298,6 +300,8 @@ public class CourseClientGUI extends javax.swing.JFrame {
            
     }//GEN-LAST:event_jButtonViewStudentCWActionPerformed
 
+    
+    //Gives coursework details of all students per course.
     private void jButtonViewOverallCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonViewOverallCourseActionPerformed
         
         if(this.jTextCourseCode.getText().trim().isEmpty()||this.jTextYearL.getText().trim().isEmpty()||this.jTextSemesterL.getText().trim().isEmpty()){

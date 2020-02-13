@@ -1,4 +1,7 @@
-
+/*
+ * This is class which is imlements all the remote fuctions to be invoked by the remote client.
+ * 
+ */
 package CourseImplementation;
 
 import CourseInterface.CourseInterface;
@@ -21,6 +24,8 @@ String dbUrl = "jdbc:mysql://localhost:3306/cw";
         
     }
     
+    
+    //Check if the file courseCode being loaded does exist in the database.
     public Boolean verify(String paramCourseCode){
         Boolean answer = true;
         try{
@@ -44,7 +49,7 @@ String dbUrl = "jdbc:mysql://localhost:3306/cw";
         return answer;
     }
     
-    
+    //Function to load courses from the coursework file of a particular subject.
     public Boolean loadCourseWork(String paramRegNumber,String paramCourseCode,
             int paramCalenderYear, int paramSemester,  int paramTest1Score, int paramTest2Score,
             int paramAssignment1Score, int paramAssignment2score, int paramPresentationScore){
@@ -75,6 +80,7 @@ String dbUrl = "jdbc:mysql://localhost:3306/cw";
         return answer;
     }
     
+    //Function to allow overwriting of the loaded file.In case the file has the same semester ,course code ,Year and is am active year or current year.
     public void clearRecords(String paramCourseCode, int paramYear, int paramSemester){
         try{
             Class.forName("com.mysql.jdbc.Driver"); 
@@ -97,7 +103,7 @@ String dbUrl = "jdbc:mysql://localhost:3306/cw";
         
     }
     
-    
+    //Function to check if the semester is active or not.
     public Boolean isSemesterActive(int paramYear, int paramSemester){
         
         Boolean activeStatus = false;
@@ -125,7 +131,7 @@ String dbUrl = "jdbc:mysql://localhost:3306/cw";
         return activeStatus;
     }
     
-    
+    //Display particular students course work.
     public  ArrayList<StudentView > diplayStudentScores
         (String paramRegNumber,int paramYear, int paramSemester) throws RemoteException{
         
@@ -171,6 +177,7 @@ String dbUrl = "jdbc:mysql://localhost:3306/cw";
         return objList;
     } 
 
+    //Function to display course work of students per course,year,Semester
     public  ArrayList<StudentView > displayStudentsPerCourse
         (String paramCourseCode,int paramYear, int paramSemester) throws RemoteException{
         

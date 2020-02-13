@@ -167,6 +167,7 @@ public class ServerGui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Choosing the file to be loaded from your local drives.
     private void OpenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenActionPerformed
 
         int returnVal = fileChooser.showOpenDialog(this);
@@ -184,10 +185,11 @@ public class ServerGui extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_OpenActionPerformed
 
+    //Exit button to close the application.
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         System.exit(0); 
     }//GEN-LAST:event_ExitActionPerformed
-
+    //Verifies the coursework file which is about to be loaded.
     private void jbVerifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbVerifyActionPerformed
         String line;
         String splitBy = ",";  
@@ -332,6 +334,7 @@ public class ServerGui extends javax.swing.JFrame {
             
     }//GEN-LAST:event_jbVerifyActionPerformed
 
+    //Function to load the files
     private void jbLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLoadActionPerformed
         // TODO add your handling code here:
         String line = null;
@@ -366,6 +369,7 @@ public class ServerGui extends javax.swing.JFrame {
                         String registrationNumber = result[0].trim();                     
                         
                     
+                        //Call the function to load file content to the database line by line.
                         objCourse.loadCourseWork(registrationNumber, Settings.gCourseCode,Settings.gYear,
                                 Settings.gSemester,test1Score, test2Score, assignment1Score, 
                                 assignment2score, presentationScore);
@@ -423,11 +427,12 @@ public class ServerGui extends javax.swing.JFrame {
          * Edited to add RMI Server start
          */
         
+        //Binding the remote object to the name.Naming service is provided by the rmiregistry.
         try{
             Registry reg = LocateRegistry.createRegistry(1099);
             CourseImplementation c = new CourseImplementation();
             reg.bind("results", c);         
-            //System.out.println("Server is running .....");
+          
             String status = "Server is runnig ...";
             
         }catch(Exception e){
